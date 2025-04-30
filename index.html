@@ -72,13 +72,19 @@
       position: relative;
       width: 100vw;
       height: 100vh;
-      background-image: url('imagem/fabiola.png');
+      background-image: url('imagem/fabiolla.png');
       background-size: cover;
       background-position: top center;
       background-attachment: fixed;
       display: flex;
       align-items: flex-end;
       justify-content: center;
+    }
+
+    @media (max-width: 1024px) {
+        .hero {
+            background-image: url('imagem/fabiolla2.png');
+        }
     }
 
     .hero-content {
@@ -270,15 +276,22 @@
       }
 
       .hero-content {
-        padding: 20px;
+        padding-top: 10px !important;
+        transform: translateY(-15%) !important;
+      }
+
+      .hero-content img {
+        height: 180px !important;
+        margin-bottom: -8px !important;
       }
 
       .hero h1 {
-        font-size: 36px;
+        font-size: 42px !important;
+        margin-bottom: 0.1em !important;
       }
       
       .hero h2 {
-        font-size: 24px;
+        font-size: 28px !important;
       }
 
       .services-grid {
@@ -358,11 +371,11 @@
 </header>
 
   <!-- Seção Hero -->
-  <section id="hero" class="hero" style="position: relative; width: 100vw; height: 100vh; background-image: url('imagem/fabiola.png'); background-size: cover; background-position: top center; background-attachment: fixed; display: flex; align-items: flex-end; justify-content: center;">
+  <section id="hero" class="hero">
     <div class="hero-content" style="position: relative; z-index: 2; width: 100%; text-align: center; color: #a67c52; padding-bottom: 5vw; text-shadow: 0 2px 16px rgba(0,0,0,0.18);">
-      <img src="imagem/logo.png" alt="Logo FP" style="height: 160px; width: auto; margin-bottom: -32px; filter: brightness(0) saturate(100%) invert(32%) sepia(24%) saturate(1017%) hue-rotate(353deg) brightness(93%) contrast(89%);" />
-      <h1 style="font-size: 4vw; font-family: 'Playfair Display', serif; font-weight: 400; letter-spacing: 1px; margin-bottom: 0.2em; color: #a67c52;">Fabiolla de Paula</h1>
-      <h2 style="font-size: 2vw; font-family: 'Montserrat', sans-serif; font-weight: 300; letter-spacing: 2px; color: #a67c52;">IMAGEM E ESTILO</h2>
+      <img src="imagem/logo.png" alt="Logo FP" style="height: 320px; width: auto; margin-bottom: -32px; filter: brightness(0) saturate(100%) invert(32%) sepia(24%) saturate(1017%) hue-rotate(353deg) brightness(93%) contrast(89%);" />
+      <h1 style="font-size: 8vw; font-family: 'Playfair Display', serif; font-weight: 400; letter-spacing: 1px; margin-bottom: 0.2em; color: #a67c52;">Fabiolla de Paula</h1>
+      <h2 style="font-size: 4vw; font-family: 'Montserrat', sans-serif; font-weight: 300; letter-spacing: 2px; color: #a67c52;">IMAGEM E ESTILO</h2>
     </div>
   </section>
 
@@ -482,7 +495,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2024 Fabíolla de Paula | Produzido por J3 Development</p>
+      <p>&copy; 2025 Fabíolla de Paula | Produzido por J3 Digital Mídia</p>
     </div>
   </footer>
 
