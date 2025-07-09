@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Closet - Fabiolla de Paula</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #a67c52;
+      --secondary-color: #f9f5f0;
+      --text-color: #333;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 8px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .social-icons a {
+      margin-left: 15px;
+      color: var(--primary-color);
+      font-size: 32px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--text-color);
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 24px;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+
+      .social-icons {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      #consultoria-imagem > div {
+        max-width: 98vw !important;
+        height: 60vh !important;
+      }
+      #consultoria-imagem img {
+        max-width: 100% !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #consultoria-imagem {
+        min-height: 340px !important;
+        height: auto !important;
+        padding: 32px 0 0 0 !important;
+      }
+      #consultoria-imagem > div {
+        flex-direction: column !important;
+        align-items: center !important;
+        max-width: 98vw !important;
+        height: auto !important;
+      }
+      #consultoria-imagem img,
+      #consultoria-imagem div[style*='border: 2px solid'] {
+        width: 90vw !important;
+        height: 180px !important;
+        margin-left: 0 !important;
+      }
+      #consultoria-imagem div[style*='border: 2px solid'] {
+        margin-top: -24px !important;
+      }
+      #consultoria-imagem .sobre-box {
+        position: static !important;
+        width: 90vw !important;
+        min-width: 0 !important;
+        margin: 16px auto 0 auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+      <div class="header-content" style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="#hero" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+          <img src="imagem/logo.png" alt="Logo FP" style="height: 54px; width: auto; filter: brightness(0) saturate(100%) invert(32%) sepia(24%) saturate(1017%) hue-rotate(353deg) brightness(93%) contrast(89%);" />
+          <span style="color: #a67c52; font-size: 1.2em; font-weight: 700; font-family: 'Montserrat', sans-serif;">Fabiolla de Paula</span>
+        </a>
+        <nav class="main-nav" style="display: flex; gap: 32px; align-items: center;">
+          <a href="index.html#hero" style="color: #a67c52; font-weight: 500; text-decoration: none; font-size: 1.1em;">Início</a>
+          <a href="index.html#sobre-mim" style="color: #a67c52; font-weight: 500; text-decoration: none; font-size: 1.1em;">Sobre Mim</a>
+          <a href="index.html#servicos" style="color: #a67c52; font-weight: 500; text-decoration: none; font-size: 1.1em;">Serviços</a>
+          <a href="index.html#contato" style="color: #a67c52; font-weight: 500; text-decoration: none; font-size: 1.1em;">Contato</a>
+        </nav>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/seu-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Hero/banner com box centralizado -->
+  <section class="hero-banner-full" style="position: relative; width: 100vw; height: 100vh; min-height: 320px; display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+    <div style="position: absolute; inset: 0; width: 100vw; height: 100vh; background: url('imagem/closet.jpg') center center no-repeat; background-size: contain;"></div>
+    <div style="position: relative; z-index: 2; border: 6px solid #8B5C3E; color: #8B5C3E; background: transparent; font-size: 2em; font-weight: 700; padding: 22px 28px; border-radius: 0; text-align: center; letter-spacing: 1.5px; box-shadow: none; min-width: 220px; min-height: 80px; max-width: 70vw; text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+      PERSONAL CLOSET
+    </div>
+  </section>
+  <!-- Seção Consultoria de Imagem -->
+  <section id="consultoria-imagem" style="background: #8B5C3E; display: flex; justify-content: center; align-items: center; padding: 0; min-height: 95vh; height: 95vh;">
+    <div style="display: flex; flex-direction: row; align-items: stretch; justify-content: center; max-width: 700px; width: 100%; height: 90vh; min-height: 340px; position: relative;">
+      <div style="width: 75%; height: 100%; position: relative; margin-left: -180px;">
+        <img src="imagem/closet2.jpg" alt="Consultoria de Imagem" style="width: 100%; height: 100%; object-fit: contain; object-position: center; border-radius: 0; background: #8B5C3E; display: block;" />
+        <div style="position: absolute; top: 64px; right: -76%; width: 96%; aspect-ratio: 1/1; min-width: 180px; border: 5px solid #fff; background: transparent; color: #fff; text-align: center; font-size: 2em; font-weight: 600; letter-spacing: 0.5px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <span style="font-size: 1em; font-weight: 700;">CLOSET INTELIGENTE</span>    
+        </div>
+      </div>
+      <div style="flex: 1; width: 25%; height: 100%;"></div>
+    </div>
+  </section>
+  <!-- Texto explicativo -->
+  <section id="texto-explicativo" style="background: #8B5C3E; display: flex; justify-content: center; align-items: flex-start; padding: 0 0 48px 0;">
+    <div style="max-width: 420px; width: 100%; margin: 0 auto; color: #fff; text-align: center; font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: 400; line-height: 1.4;">
+        
+ Costumo dizer que o nosso closet é a nossa
+ "caixa preta" que precisa ser aberta e estudada.
+ O serviço de Closet Inteligente vai permitir você
+ ter um guarda-roupa mais funcional e alinhado
+ com seu estilo e estratégia de imagem. Isso vai
+ fazer com que você valorize seu tempo e faça
+ compras mais assertivas.
+ <br><br>
+ Nesse processo é feito uma avaliação do seu
+ guarda-roupa, com a produção de no mínimo 30
+ looks.
+ <br><br>
+ 1. Entrevista inicial guiada - 02 horas
+ <br>
+ 2. Avaliação do Guarda roupa e edição de looks
+ <br>
+ – 06 horas
+ 
+ 
+    </div>
+  </section>
+  <div style="text-align: center; margin: 48px 0;">
+    <a href="https://wa.me/seunumerodetelefone" target="_blank">
+      <i class="fab fa-whatsapp" style="font-size: 5em; color: #8B5C3E; background: none;"></i>
+    </a>
+  </div>
+  <script>
+    // Menu mobile
+    document.querySelector('.mobile-menu').addEventListener('click', function() {
+      const socialIcons = document.querySelector('.social-icons');
+      socialIcons.style.display = socialIcons.style.display === 'none' ? 'flex' : 'none';
+    });
+  </script>
+  <footer style="background-color: #222; color: #fff; padding: 12px 0; text-align: center;">
+    <div class="container">
+      <p>&copy; 2025 Fabíolla de Paula | Produzido por: <img src="imagem/logoj3.png" alt="J3 Digital Mídia" style="display:inline; height:28px; vertical-align:middle; position:relative; top:-2px; margin-left:8px;"></p>
+    </div>
+  </footer>
+</body>
+</html> 
+
+
