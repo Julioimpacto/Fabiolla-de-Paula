@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Stylist - Fabiolla de Paula</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#a67c52',
+            secondary: '#f9f5f0',
+            dark: '#8B5C3E',
+            light: '#a9a39a'
+          },
+          fontFamily: {
+            'montserrat': ['Montserrat', 'sans-serif'],
+            'playfair': ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --primary-color: #a67c52;
+      --secondary-color: #f9f5f0;
+      --text-color: #333;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 24px;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+
+      .social-icons {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .main-nav {
+        display: none !important;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Estilos específicos para mobile */
+    @media (max-width: 768px) {
+      /* Ajustes do header para mobile */
+      header .container {
+        padding: 0 16px !important;
+      }
+
+      .logo span {
+        font-size: 1em !important;
+      }
+
+      .logo img {
+        height: 14px !important;
+      }
+
+      /* Ajustes da seção hero para mobile */
+      .hero-section {
+        min-height: 60vh !important;
+        height: 60vh !important;
+      }
+
+      .hero-text {
+        font-size: 18px !important;
+        padding: 12px 16px !important;
+        min-width: 180px !important;
+        min-height: 60px !important;
+      }
+
+      /* Ajustes da seção de imagem para mobile */
+      .image-section {
+        min-height: 35vh !important;
+        height: 35vh !important;
+        padding: 5px 0 !important;
+      }
+
+      .image-container {
+        max-width: 95vw !important;
+        height: auto !important;
+        min-height: 300px !important;
+      }
+
+      /* Ajustes do texto explicativo para mobile */
+      .text-section {
+        padding: 20px 16px !important;
+      }
+
+      .text-content {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+      }
+
+      /* Ajustes dos cards para mobile */
+      .cards-section {
+        padding: 20px 16px !important;
+      }
+
+      .cards-grid {
+        gap: 16px !important;
+      }
+
+      .card-icon {
+        font-size: 3rem !important;
+      }
+
+      .card-text {
+        font-size: 13px !important;
+      }
+
+      /* Ajustes do bloco de etapas para mobile */
+      .stages-section {
+        min-height: 50vh !important;
+        height: 50vh !important;
+      }
+
+      .stages-content {
+        padding: 20px 16px !important;
+        font-size: 16px !important;
+        border-radius: 20px !important;
+      }
+    }
+
+    /* Ajustes específicos para tablets (iPad Air, iPad Pro, Surface Pro7, Asus Zenbook Fold) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .image-section {
+        min-height: 5vh !important;
+        height: 5vh !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+      }
+      
+      .image-container {
+        height: 40vh !important;
+        min-height: 200px !important;
+      }
+      
+      .text-section {
+        padding-top: 250px !important;
+      }
+    }
+
+    /* Ajustes específicos para iPad Mini */
+    @media (min-width: 768px) and (max-width: 820px) and (min-height: 1024px) {
+      .hero-section {
+        min-height: 60vh !important;
+        height: 60vh !important;
+      }
+      
+      .image-section {
+        min-height: 40vh !important;
+        height: 40vh !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+      }
+      
+      .image-container {
+        height: 35vh !important;
+        min-height: 180px !important;
+      }
+      
+      .text-section {
+        padding-top: 30px !important;
+      }
+    }
+
+    /* Ajustes específicos para Surface Duo */
+    @media (min-width: 768px) and (max-width: 820px) and (max-height: 800px) {
+      .hero-section {
+        min-height: 35vh !important;
+        height: 35vh !important;
+        max-height: 35vh !important;
+        overflow: hidden !important;
+      }
+      
+      .image-section {
+        min-height: 65vh !important;
+        height: 65vh !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        position: relative !important;
+        top: 0 !important;
+        overflow: hidden !important;
+      }
+      
+      .image-container {
+        height: 60vh !important;
+        min-height: 300px !important;
+        max-height: 60vh !important;
+      }
+      
+      .text-section {
+        padding-top: 5px !important;
+        margin-top: 0 !important;
+      }
+    }
+
+    /* Ajustes específicos para Surface Duo 540x720 */
+    @media (width: 540px) and (height: 720px) {
+      .hero-section {
+        min-height: 40vh !important;
+        height: 40vh !important;
+        max-height: 40vh !important;
+        overflow: visible !important;
+        position: relative !important;
+        z-index: 1 !important;
+      }
+      
+      .image-section {
+        min-height: 60vh !important;
+        height: 60vh !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        position: relative !important;
+        top: 0 !important;
+        overflow: hidden !important;
+        z-index: 2 !important;
+      }
+      
+      .image-container {
+        height: 55vh !important;
+        min-height: 300px !important;
+        max-height: 55vh !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+      
+      .text-section {
+        padding-top: 10px !important;
+        margin-top: 0 !important;
+        position: relative !important;
+        z-index: 3 !important;
+      }
+    }
+
+    /* Ajustes específicos para Nest Hub 1024x600 */
+    @media (width: 1024px) and (height: 600px) {
+      .image-section {
+        min-height: 80vh !important;
+        height: 80vh !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+      }
+      
+      .image-container {
+        height: 75vh !important;
+        min-height: 400px !important;
+        max-height: 75vh !important;
+      }
+      
+      .text-section {
+        padding-top: 20px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text {
+        font-size: 16px !important;
+        padding: 10px 14px !important;
+        min-width: 160px !important;
+      }
+
+      .text-content {
+        font-size: 13px !important;
+      }
+
+      .card-icon {
+        font-size: 2.5rem !important;
+      }
+
+      .card-text {
+        font-size: 12px !important;
+      }
+
+      .stages-content {
+        font-size: 14px !important;
+        padding: 16px 12px !important;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <header class="bg-white shadow-lg py-2 w-full top-0 z-50 fixed">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="index.html#hero" class="logo flex items-center gap-3 no-underline">
+          <img src="imagem/logo.png" alt="Logo FP" class="h-8 md:h-10 w-auto" style="filter: brightness(0) saturate(100%) invert(32%) sepia(24%) saturate(1017%) hue-rotate(353deg) brightness(93%) contrast(89%);" />
+          <span class="text-primary text-lg md:text-xl font-bold font-montserrat">Fabiolla de Paula</span>
+        </a>
+        <nav class="hidden lg:flex gap-8 items-center">
+          <a href="index.html#hero" class="text-primary font-medium no-underline text-lg hover:underline">Início</a>
+          <a href="index.html#sobre-mim" class="text-primary font-medium no-underline text-lg hover:underline">Sobre Mim</a>
+          <a href="index.html#servicos" class="text-primary font-medium no-underline text-lg hover:underline">Serviços</a>
+          <a href="index.html#contato" class="text-primary font-medium no-underline text-lg hover:underline">Contato</a>
+        </nav>
+        <div class="hidden lg:flex">
+          <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank" class="ml-4 text-primary text-3xl hover:text-gray-700 transition-colors duration-300"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/seu-instagram" target="_blank" class="ml-4 text-primary text-3xl hover:text-gray-700 transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="lg:hidden text-2xl text-primary cursor-pointer">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero/banner com box centralizado -->
+  <section class="hero-section relative w-screen h-screen min-h-[320px] flex items-center justify-center bg-white overflow-hidden -mx-[calc(50vw-50%)]">
+    <div class="absolute inset-0 w-full h-full" style="background-image: url('imagem/stylist.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+    <div class="hero-text relative z-10 border-4 border-primary text-primary bg-transparent text-xl md:text-3xl font-bold py-6 px-7 text-center tracking-widest min-w-[220px] min-h-[80px] max-w-[70vw] uppercase flex items-center justify-center">
+      PERSONAL STYLIST
+    </div>
+  </section>
+
+  <!-- Seção Consultoria de Imagem -->
+  <section class="image-section bg-dark flex justify-center items-center py-0 min-h-[95vh] h-[95vh]">
+    <div class="image-container flex flex-col md:flex-row items-stretch justify-center max-w-[1100px] w-full h-[90vh] min-h-[340px] relative">
+      <div class="w-full md:w-full h-full relative">
+        <img src="imagem/stylist1.png" alt="Consultoria de Imagem" class="w-full h-full object-contain object-center bg-dark block" />
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Texto explicativo -->
+  <section class="text-section bg-dark flex justify-center items-start pb-12">
+    <div class="text-content max-w-[420px] w-full mx-auto text-white text-center text-base font-montserrat font-normal leading-relaxed px-4">
+      A consultoria de imagem completa irá te auxiliar na descoberta e construção da imagem desejada, ensinando técnicas para que você se sinta seguro visualmente, revelando uma aparência mais harmônica e condizente com sua comunicação pessoal.<br><br>
+      A consultoria completa é um processo de autoconhecimento, que começa pela sua imagem, mas que irá revelar conhecimentos profundos sobre você e seus comportamentos. Você irá ampliar os horizontes de comunicação, melhorar comportamentos, elevar autoestima e autoconfiança.<br><br>
+      Duração de aproximadamente 02 meses, a consultoria completa consiste em até 8 encontros e envolve quatro etapas detalhadas abaixo. As etapas e serviços que compõem a consultoria de imagem completa também podem ser contratados separadamente (e algumas on-line).
+    </div>
+  </section>
+
+  <!-- Cards de Serviço -->
+  <section class="cards-section bg-dark pb-12 flex justify-center">
+    <div class="cards-grid max-w-[420px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+      <div class="flex flex-col items-center justify-start">
+        <i class="card-icon fa-solid fa-ruler-horizontal text-5xl text-white mb-2"></i>
+        <div class="card-text text-base font-medium text-white text-center">Identidade Corporal</div>
+      </div>
+      <div class="flex flex-col items-center justify-start">
+        <i class="card-icon fa-solid fa-palette text-5xl text-white mb-2"></i>
+        <div class="card-text text-base font-medium text-white text-center">Visagismo e Paleta de Cores</div>
+      </div>
+      <div class="flex flex-col items-center justify-start">
+        <i class="card-icon fa-solid fa-shirt text-5xl text-white mb-2"></i>
+        <div class="card-text text-base font-medium text-white text-center">Limpeza do Closet</div>
+      </div>
+      <div class="flex flex-col items-center justify-start">
+        <i class="card-icon fa-solid fa-camera-retro text-5xl text-white mb-2"></i>
+        <div class="card-text text-base font-medium text-white text-center">Produção e Fotografia de Looks</div>
+      </div>
+      <div class="flex flex-col items-center justify-start">
+        <i class="card-icon fa-solid fa-bag-shopping text-5xl text-white mb-2"></i>
+        <div class="card-text text-base font-medium text-white text-center">Personal Shopper</div>
+      </div>
+      <div class="flex flex-col items-center justify-start">
+        <i class="card-icon fa-solid fa-file-lines text-5xl text-white mb-2"></i>
+        <div class="card-text text-base font-medium text-white text-center">Apresentação do Dossiê com a estratégia de imagem</div>
+      </div>
+      <div class="flex flex-col items-center justify-start md:col-span-2">
+        <i class="card-icon fa-solid fa-star text-5xl text-white mb-2"></i>
+        <div class="card-text text-base font-medium text-white text-center">Posicionamento de marca (bônus)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bloco de Etapas -->
+  <section class="stages-section relative w-screen h-screen min-h-[600px] flex justify-center items-center -mx-[calc(50vw-50%)]" style="background-image: url('imagem/stylist2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="stages-content bg-primary/85 rounded-[36px] p-12 md:p-16 max-w-[800px] mx-auto text-center text-white font-montserrat font-bold text-xl md:text-2xl shadow-lg">
+      ETAPA 1: IDENTIDADE PESSOAL<br><br>
+      ETAPA 2: IDENTIDADE VISUAL<br><br>
+      ETAPA 3: PARTE PRÁTICA<br><br>
+      ETAPA 04 – DEVOLUTIVA
+    </div>
+  </section>
+
+  <footer class="bg-black text-white py-4 text-base text-center">
+    <div class="container">
+      <p>&copy; 2025 Fabíolla de Paula | Produzido por: <img src="imagem/logoj3.png" alt="J3 Digital Mídia" class="inline h-7 align-middle relative -top-0.5 ml-2"></p>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile
+    document.querySelector('.mobile-menu').addEventListener('click', function() {
+      const socialIcons = document.querySelector('.social-icons');
+      socialIcons.style.display = socialIcons.style.display === 'none' ? 'flex' : 'none';
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Closet - Fabiolla de Paula</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#a67c52',
+            secondary: '#f9f5f0',
+            dark: '#8B5C3E',
+            light: '#a9a39a'
+          },
+          fontFamily: {
+            'montserrat': ['Montserrat', 'sans-serif'],
+            'playfair': ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --primary-color: #a67c52;
+      --secondary-color: #f9f5f0;
+      --text-color: #333;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 24px;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+
+      .social-icons {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .main-nav {
+        display: none !important;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Estilos específicos para mobile */
+    @media (max-width: 768px) {
+      .mobile-image-section {
+        min-height: 1vh !important;
+        height: 1vh !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+      }
+      
+      .mobile-image-section > div {
+        height: 35vh !important;
+        min-height: 180px !important;
+      }
+      
+      .mobile-text-section {
+        padding-top: 250px !important;
+      }
+    }
+
+    /* Ajustes específicos para tablets (iPad Air, iPad Pro, Surface Pro7, Asus Zenbook Fold) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .mobile-image-section {
+        min-height: 5vh !important;
+        height: 5vh !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+      }
+      
+      .mobile-image-section > div {
+        height: 40vh !important;
+        min-height: 200px !important;
+      }
+      
+      .mobile-text-section {
+        padding-top: 250px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-white shadow-lg py-2 w-full top-0 z-50 fixed">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <a href="index.html#hero" class="flex items-center gap-3 no-underline">
+          <img src="imagem/logo.png" alt="Logo FP" class="h-8 md:h-10 w-auto" style="filter: brightness(0) saturate(100%) invert(32%) sepia(24%) saturate(1017%) hue-rotate(353deg) brightness(93%) contrast(89%);" />
+          <span class="text-primary text-lg md:text-xl font-bold font-montserrat">Fabiolla de Paula</span>
+        </a>
+        <nav class="hidden lg:flex gap-8 items-center">
+          <a href="index.html#hero" class="text-primary font-medium no-underline text-lg hover:underline">Início</a>
+          <a href="index.html#sobre-mim" class="text-primary font-medium no-underline text-lg hover:underline">Sobre Mim</a>
+          <a href="index.html#servicos" class="text-primary font-medium no-underline text-lg hover:underline">Serviços</a>
+          <a href="index.html#contato" class="text-primary font-medium no-underline text-lg hover:underline">Contato</a>
+        </nav>
+        <div class="hidden lg:flex">
+          <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank" class="ml-4 text-primary text-3xl hover:text-gray-700 transition-colors duration-300"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/seu-instagram" target="_blank" class="ml-4 text-primary text-3xl hover:text-gray-700 transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="lg:hidden text-2xl text-primary cursor-pointer">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero/banner com box centralizado -->
+  <section class="relative w-screen h-screen min-h-[320px] flex items-center justify-center bg-white overflow-hidden -mx-[calc(50vw-50%)]">
+    <div class="absolute inset-0 w-full h-full" style="background-image: url('imagem/closet.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+    <div class="relative z-10 border-4 border-primary text-primary bg-transparent text-xl md:text-3xl font-bold py-6 px-7 text-center tracking-widest min-w-[220px] min-h-[80px] max-w-[70vw] uppercase flex items-center justify-center">
+      PERSONAL CLOSET
+    </div>
+  </section>
+
+  <!-- Seção Closet Inteligente -->
+  <section class="bg-dark flex justify-center items-center py-0 min-h-[95vh] h-[95vh] mobile-image-section">
+    <div class="flex flex-col md:flex-row items-stretch justify-center max-w-[1100px] w-full h-[90vh] min-h-[340px] relative">
+      <div class="w-full md:w-full h-full relative">
+        <img src="imagem/closet2.jpg" alt="Consultoria de Imagem" class="w-full h-full object-contain object-center bg-dark block" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Texto explicativo -->
+  <section class="bg-dark flex justify-center items-start pb-12 mobile-text-section">
+    <div class="max-w-[420px] w-full mx-auto text-white text-center text-base font-montserrat font-normal leading-relaxed px-4">
+      Costumo dizer que o nosso closet é a nossa
+      "caixa preta" que precisa ser aberta e estudada.
+      O serviço de Closet Inteligente vai permitir você
+      ter um guarda-roupa mais funcional e alinhado
+      com seu estilo e estratégia de imagem. Isso vai
+      fazer com que você valorize seu tempo e faça
+      compras mais assertivas.
+      <br><br>
+      Nesse processo é feito uma avaliação do seu
+      guarda-roupa, com a produção de no mínimo 30
+      looks.
+      <br><br>
+      1. Entrevista inicial guiada - 02 horas
+      <br>
+      2. Avaliação do Guarda roupa e edição de looks
+      <br>
+      – 06 horas
+    </div>
+  </section>
+
+  <div class="text-center my-12">
+    <a href="https://wa.me/seunumerodetelefone" target="_blank">
+      <i class="fab fa-whatsapp text-5xl text-dark bg-none"></i>
+    </a>
+  </div>
+
+  <footer class="bg-black text-white py-4 text-base text-center">
+    <div class="container">
+      <p>&copy; 2025 Fabíolla de Paula | Produzido por: <img src="imagem/logoj3.png" alt="J3 Digital Mídia" class="inline h-7 align-middle relative -top-0.5 ml-2"></p>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile
+    document.querySelector('.mobile-menu').addEventListener('click', function() {
+      const socialIcons = document.querySelector('.social-icons');
+      socialIcons.style.display = socialIcons.style.display === 'none' ? 'flex' : 'none';
+    });
+  </script>
+</body>
+</html> 
+
+
